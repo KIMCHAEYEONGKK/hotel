@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>idCheckProc</title>
+</head>
+<body>
+    <div style="text-align: center"></div>
+    <h3>* 아이디 중복 확인 결과 *</h3>
+    <p>입력 ID : <strong>{{ user_id }}</strong></p>
+    {% if user is exists %}
+        <p style='color: red'>해당 아이디는 사용하실 수 없습니다.</p>
+    {% else %}
+        <p>사용 가능한 아이디입니다.</p>
+        <a href='javascript:apply("{{ user_id }}")'>[적용]</a>
+        <script>
+            function apply(user) {
+                opener.document.regForm.id.value = user;
+                window.close();
+            }
+        </script>
+    {% endif %}
+    <hr>
+    <a href="javascript:history.back()">[다시시도]</a>
+    &nbsp; &nbsp;
+    <a href="javascript:window.close()">[창닫기]</a>
+</body>
+</html>

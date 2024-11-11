@@ -1,0 +1,1024 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <style>
+            .dropbtn {
+  background-color: white;
+  color: black;
+
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position:absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #00000;}
+.mb-3 input {
+    width:500px; --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    list-style: none;
+    margin: 0;
+    box-sizing: border-box;
+    word-break: keep-all;
+    word-wrap: break-word;
+    font-weight: 400;
+    line-height: 1.8;
+    height: 60px;
+    padding: 8px 13px 8px 0;
+    color: #000;
+    border: solid #ccc;
+    border-width: 0 0 1px 0;
+    vertical-align: middle;
+    font-size: 18px;
+    font-family: gothamL,notokrL;
+}
+        </style>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+              <img class="w-10" style="width:100px; padding-top:-30px;" src="{% static 'img/logo.png' %}" alt="로고"/>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <div class="dropdown">
+                  <ul class="bropbtn" style="padding-top:5px;">SPECIAL</ul>
+                    <div class="dropdown-content" style="padding-left:22px;">
+                            <a class="dropdown-item" href="#">OFFERS</a>
+                            <a class="dropdown-item" href="#">PACKAGE</a>
+                            <a class="dropdown-item" href="#">Event</a>
+                    </div>
+                  </div>
+
+                  <div class="dropdown">
+                  <ul class="bropbtn" style="padding-top:5px;">ROOM</ul>
+                    <div class="dropdown-content" style="padding-left:22px;">
+                            <a class="dropdown-item" href="#">디럭스</a>
+                            <a class="dropdown-item" href="#">프리미엄 디럭스</a>
+                            <a class="dropdown-item" href="#">스위트</a>
+                            <a class="dropdown-item" href="#">프리미엄 스위트</a>
+                    </div>
+                  </div>
+
+                  <div class="dropdown">
+                  <ul class="bropbtn" style="padding-top:5px;">DINNING</ul>
+                    <div class="dropdown-content" style="padding-left:22px;">
+                            <a class="dropdown-item" href="#">LOUNGE</a>
+                            <a class="dropdown-item" href="#">BOUTIQUE</a>
+                            <a class="dropdown-item" href="#">MONTERRA</a>
+                            <a class="dropdown-item" href="#">LOENVIEW</a>
+                            <a class="dropdown-item" href="#">FINECOACH</a>
+                    </div>
+                  </div>
+
+                  <div class="dropdown">
+                  <ul class="bropbtn" style="padding-top:5px;">SPA</ul>
+                    <div class="dropdown-content" style="padding-left:22px;">
+                            <a class="dropdown-item" href="#">POOL</a>
+                            <a class="dropdown-item" href="#">SAUNA</a>
+                            <a class="dropdown-item" href="#">OCEAN BEACH</a>
+
+                    </div>
+                  </div>
+
+
+              </ul>
+              <hr>
+
+              <li class="d-flex" style="padding-left:20px; padding-top:10px;">
+                  <a class="nav-link active" aria-current="page" href="/accounts/login/">로그인</a>
+                </li>
+                <li class="d-flex" style="padding-left:20px; padding-top:10px;">
+                  <a class="nav-link active" aria-current="page" href="/accounts/signup/">회원가입</a>
+                </li>
+                <li class="d-flex" style="padding-left:20px; padding-top:10px;">
+                  <a class="nav-link active" aria-current="page" href="#">마이페이지</a>
+                </li>
+                <li class="d-flex" style="padding-left:20px; padding-top:10px;">
+                  <a class="nav-link active" aria-current="page" href="#">Reservation</a>
+                </li>
+                <li class="d-flex" style="padding-left:20px; padding-top:10px;">
+                  <a class="nav-link active" aria-current="page" href="#">예약확인</a>
+                </li>
+                <li class="d-flex" style="padding-left:20px; padding-top:10px;">
+                  <a class="nav-link active" aria-current="page" href="#">고객센터</a>
+                </li>
+          </div>
+          </div>
+
+
+        </nav>
+        <main class="form-signin " style="min-height: 700px;">
+                <div class="container my-3">
+                    <h3 class="h3 mb-3 fw-normal" style="text-align:center; padding-top:100px;">로그인
+                        </h3>
+                    <form method="POST" action="{% url 'accounts:login' %}" style="margin-top:100px; padding-left:50px;">
+                        {% csrf_token %}
+<!--                        {% if form.non_field_errors %}-->
+<!--                            {% for error in form.non_field_errors %}-->
+<!--                                <span class="text-red-700 font-semibold text-sm block">{{error}}</span>-->
+<!--                            {% endfor %}-->
+<!--                        {% endif %}-->
+                        <div class="mb-3">
+                            <label for="user_id">아이디</label>
+                            <input type="text" id="user_id" name="user_id" class="form-control" style="margin: 0;
+    box-sizing: border-box;
+    word-break: keep-all;
+    word-wrap: break-word;
+    white-space: normal;
+    text-size-adjust: 100%;
+    max-height: 1000000px;
+    font-family: spoqaL, gothamL, playfair;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    height: 55px;
+    color: #000;
+    vertical-align: middle;
+    width: 100%;
+    padding: 20px 17px;
+    border: none;
+    background-color: #f9f9f9;" placeholder="아이디">
+                        </div>
+                        <div class="mb-5">
+
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password">비밀번호</label>
+                            <input type="password" id="password" name="password" class="form-control" style="margin: 0;
+    box-sizing: border-box;
+    word-break: keep-all;
+    word-wrap: break-word;
+    white-space: normal;
+    text-size-adjust: 100%;
+    max-height: 1000000px;
+    font-family: spoqaL, gothamL, playfair;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    height: 55px;
+    color: #000;
+    vertical-align: middle;
+    width: 100%;
+    padding: 20px 17px;
+    border: none;
+    background-color: #f9f9f9;" placeholder="비밀번호">
+                        </div>
+                        <span class="frm" style="    color: #000;
+    font-family: spoqaL, gothamL, playfair;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.5;
+    word-break: keep-all;
+    word-wrap: break-word;
+    white-space: normal;
+    text-size-adjust: 100%;
+    position: relative;
+    display: block;
+    margin: 13px 0 0;">
+								<input type="checkbox" id="idSaveCheck"><label for="idSaveCheck">아이디 저장<!-- 아이디 저장 --></label>
+                        </span>
+
+
+
+                        <button type="submit" class="btn btn-primary" style="--swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    word-break: keep-all;
+    word-wrap: break-word;
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    transition: color 0.5s ease-in-out;
+    overflow: hidden;
+    z-index: 1;
+    font-family: gothamL, notokrL;
+    min-width: 190px;
+    height: 60px;
+    width:50px;
+    padding: 0 25px;
+    line-height: 58px;
+    font-size: 18px;
+    letter-spacing: -.01em;
+    background: #000 !important;
+    color: #fff !important;
+    margin: 0 0;"
+    >로그인</button>
+<!--                        <button type="submit" id="join_complete" class="btn btn-primary" style="&#45;&#45;swiper-theme-color: #000;-->
+<!--    &#45;&#45;swiper-navigation-size: 44px;-->
+<!--    word-break: keep-all;-->
+<!--    word-wrap: break-word;-->
+<!--    cursor: pointer;-->
+<!--    position: relative;-->
+<!--    display: inline-block;-->
+<!--    text-align: center;-->
+<!--    vertical-align: middle;-->
+<!--    box-sizing: border-box;-->
+<!--    border: 1px solid #000;-->
+<!--    transition: color 0.5s ease-in-out;-->
+<!--    overflow: hidden;-->
+<!--    z-index: 1;-->
+<!--    font-family: gothamL, notokrL;-->
+<!--    letter-spacing: -.01em;-->
+<!--    width: 100% !important;-->
+<!--    min-width: auto;-->
+<!--    background: #000 !important;-->
+<!--    color: #fff !important;-->
+<!--    height: 70px;-->
+<!--    margin: 15px 0 15px;-->
+<!--    padding: 0;-->
+<!--    font-size: 22px;-->
+<!--    font-weight: 500;-->
+<!--    line-height: 66px;">로그인</button>-->
+                        <div class="loginLink" style="color: #000;
+    font-family: spoqaL, gothamL, playfair;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-break: keep-all;
+    word-wrap: break-word;
+    white-space: normal;
+    text-size-adjust: 100%;
+    max-height: 1000000px;
+    margin-bottom: 22px;
+    text-align: center;">
+                            <a href="{% url 'accounts:signup' %}" class="btnLine" style="    font-family: spoqaL, gothamL, playfair;
+    word-break: keep-all;
+    word-wrap: break-word;
+    white-space: normal;
+    text-size-adjust: 100%;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.1;
+    border-bottom: 1px solid #000;
+    text-transform: uppercase;
+    margin: 7px;">회원가입<!-- 회원가입 --></a>
+                            <a href="#" class="btnLine" style="    font-family: spoqaL, gothamL, playfair;
+    word-break: keep-all;
+    word-wrap: break-word;
+    white-space: normal;
+    text-size-adjust: 100%;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.1;
+    border-bottom: 1px solid #000;
+    text-transform: uppercase;
+    margin: 7px;
+    ">아이디 / 비밀번호 찾기<!-- 아이디 / 비밀번호 찾기 --></a>
+
+                            <a href="#" class="btnLine" style="font-family: spoqaL, gothamL, playfair;
+    word-break: keep-all;
+    word-wrap: break-word;
+    white-space: normal;
+    text-size-adjust: 100%;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.1;
+    border-bottom: 1px solid #000;
+    text-transform: uppercase;
+    margin: 7px;">계정활성화<!-- 계정활성화 --></a>
+
+                        </div>
+
+
+
+                    </form>
+                </div>
+
+
+            </main>
+
+        <div class="footer" style="--swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    color: #000;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-break: keep-all;
+    word-wrap: break-word;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -900px;
+    background: #000;
+    z-index: 100;">
+			<div class="footArea" style=" --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    color: #000;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.8;
+    box-sizing: border-box;
+    word-break: keep-all;
+    word-wrap: break-word;
+    position: relative;
+    width: 1400px;
+    height: 400px;
+    margin: 0 auto;
+    padding: 150px 0 0 280px;">
+				<span class="logo" style="--swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    color: #000;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.8;
+    word-break: keep-all;
+    word-wrap: break-word;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 156px;
+    text-indent: -9999px;
+    overflow: hidden;
+    width: 130px;
+    height: 64px;
+    "><a href="#">HAPPY COMBINE HOTELS</a></span>
+						<div class="infoPolicy" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    color: #000;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-break: keep-all;
+    word-wrap: break-word;">
+		                    <a href="/voc/cstmrOpinionForm.do" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    line-height: 1.8;
+    word-break: keep-all;
+    word-wrap: break-word;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+    margin-right: 25px;">고객센터</a>
+		                    <a href="/policy/agreement.do" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    line-height: 1.8;
+    word-break: keep-all;
+    word-wrap: break-word;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+    margin-right: 25px;">웹사이트 이용약관</a>
+                            <a href="https://josunhotel.com/policy/clubJosun.do" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    line-height: 1.8;
+    word-break: keep-all;
+    word-wrap: break-word;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+    margin-right: 25px;">멤버십 이용약관</a>
+                            <a href="/policy/voucher.do" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    line-height: 1.8;
+    word-break: keep-all;
+    word-wrap: break-word;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+    margin-right: 25px;">모바일 상품권 이용약관</a>
+		                    <a href="/policy/paperVoucher.do" style="    --swiper-theme-color: #000;
+                                --swiper-navigation-size: 44px;
+                                font-family: notokrL, gothamL, playfair;
+                                font-weight: 400;
+                                line-height: 1.8;
+                                word-break: keep-all;
+                                word-wrap: break-word;
+                                text-decoration: none;
+                                box-sizing: border-box;
+                                cursor: pointer;
+                                display: inline-block;
+                                color: #fff;
+                                font-size: 15px;
+                                margin-right: 25px;">이용권 이용약관</a>
+		                    <a href="/policy/privacy.do" class="pointColor" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    line-height: 1.8;
+    word-break: keep-all;
+    word-wrap: break-word;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+    margin-right: 25px;">개인정보처리방침</a>
+                            <br>
+		                    <a href="/policy/media.do" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    line-height: 1.8;
+    word-break: keep-all;
+    word-wrap: break-word;
+    text-decoration: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+    margin-right: 25px;">영상정보처리기기운영·관리방침</a>
+
+
+
+						</div>
+
+                        <!-- 210401 ADD sns icon -->
+                        <div class="snsArea" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    color: #000;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-break: keep-all;
+    word-wrap: break-word;
+    display: flex;
+    position: absolute;
+    right: 7px;
+    top: 210px;
+    z-index: 1;">
+                          <div class="icohappy" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    color: #000;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-break: keep-all;
+    word-wrap: break-word;
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+    margin-left: 0;
+    "><a href="#" target="_blank" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.8;
+    word-break: keep-all;
+    word-wrap: break-word;
+    text-decoration: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    text-indent: -9999px;
+    color: transparent;
+    cursor: pointer;">happycombine</a></div>
+                          <div class="icoKakao" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    color: #000;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-break: keep-all;
+    word-wrap: break-word;
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+    margin-left: 24px;
+    "><a href="#" target="_blank" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.8;
+    word-break: keep-all;
+    word-wrap: break-word;
+    text-decoration: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    text-indent: -9999px;
+    color: transparent;
+    cursor: pointer;">kakao</a></div>
+                          <div class="icoInsta" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    color: #000;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-break: keep-all;
+    word-wrap: break-word;
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+    margin-left: 24px;
+    "><a href="#" target="_blank" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.8;
+    word-break: keep-all;
+    word-wrap: break-word;
+    text-decoration: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    text-indent: -9999px;
+    color: transparent;
+    cursor: pointer;">instagram</a></div>
+                          <div class="icoYoutube" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    color: #000;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-break: keep-all;
+    word-wrap: break-word;
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+    margin-left: 24px;
+    "><a href=#" target="_blank" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    font-family: notokrL, gothamL, playfair;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.8;
+    word-break: keep-all;
+    word-wrap: break-word;
+    text-decoration: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    text-indent: -9999px;
+    color: transparent;
+    cursor: pointer;">youtube</a></div>
+                       </div>
+                       <!-- // 210401 ADD sns icon -->
+						<div class="address" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-break: keep-all;
+    word-wrap: break-word;
+    font: 400 14px/1.8 notokrL;
+    color: #fff;
+    opacity: .5;
+    margin-top: 20px;">
+							<p style="--swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    font: 400 14px/1.8 notokrL;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-break: keep-all;
+    word-wrap: break-word;">서울시 중구 소공로 106 <span class="ceo" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    font: 400 14px/1.8 notokrL;
+    color: #fff;
+    word-break: keep-all;
+    word-wrap: break-word;
+    margin-left: 15px;">대표이사 김채영</span><span class="tel" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    font: 400 14px/1.8 notokrL;
+    color: #fff;
+    word-break: keep-all;
+    word-wrap: break-word;
+    margin-left: 15px;
+    font-family: gothamL;">T. 02-771-0500</span></p>
+							<p style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    font: 400 14px/1.8 notokrL;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-break: keep-all;
+    word-wrap: break-word;">사업자등록번호 104-81-27386 통신판매신고번호 중구 0623호</p>
+						</div>
+
+
+
+
+				<div class="copyright" style="    --swiper-theme-color: #000;
+    --swiper-navigation-size: 44px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-break: keep-all;
+    word-wrap: break-word;
+    font: 400 14px/1.8 gothamL;
+    color: #fff;
+    opacity: .5;">© 2020 HAPPY COMBiNE HOTELS &amp; RESORTS Co. All rights reserved.</div>
+			</div>
+		</div>
+
+    </body>
+</html>
+<script>
+ $(document).ready(function(){
+
+	 //카카오 인앱 브라우저 확인
+	var agent = navigator.userAgent.toUpperCase();
+	if (agent.indexOf('KAKAO') >= 0) {
+
+	}
+
+	 var userInputId = getLoginCookie("userInputId");//저장된 쿠기값 가져오기
+    $("#user_id").val(userInputId);
+
+    if($("#user_id").val() != ""){ // 그 전에 ID를 저장해서 처음 페이지 로딩
+                                           // 아이디 저장하기 체크되어있을 시,
+        $("#idSaveCheck").prop("checked", true); // ID 저장하기를 체크 상태로 두기.
+    }
+
+    $("#idSaveCheck").change(function(){ // 체크박스에 변화가 발생시
+        if($("#idSaveCheck").is(":checked")){ // ID 저장하기 체크했을 때,
+            var userInputId = $("#user_id").val();
+            setLoginCookie("userInputId", userInputId, 7); // 7일 동안 쿠키 보관
+        }else{ // ID 저장하기 체크 해제 시,
+            deleteLoginCookie("userInputId");
+        }
+    });
+
+    // ID 저장하기를 체크한 상태에서 ID를 입력하는 경우, 이럴 때도 쿠키 저장.
+    $("#user_id").keyup(function(){ // ID 입력 칸에 ID를 입력할 때,
+        if($("#idSaveCheck").is(":checked")){ // ID 저장하기를 체크한 상태라면,
+            var userInputId = $("#user_id").val();
+            setLoginCookie("userInputId", userInputId, 7); // 7일 동안 쿠키 보관
+        }
+    });
+});
+
+function setLoginCookie(cookieName, value, exdays){
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
+    document.cookie = cookieName + "=" + cookieValue;
+}
+
+function deleteLoginCookie(cookieName){
+    var expireDate = new Date();
+    expireDate.setDate(expireDate.getDate() - 1);
+    document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString();
+}
+
+function getLoginCookie(cookieName) {
+    cookieName = cookieName + '=';
+    var cookieData = document.cookie;
+    var start = cookieData.indexOf(cookieName);
+    var cookieValue = '';
+    if(start != -1){
+        start += cookieName.length;
+        var end = cookieData.indexOf(';', start);
+        if(end == -1)end = cookieData.length;
+        cookieValue = cookieData.substring(start, end);
+    }
+    return unescape(cookieValue);
+}
+</script>
+<script type="text/javascript">
+
+	document.domain = "josunhotel.com";
+
+	var PageScript = function() {
+
+	}
+
+	PageScript.prototype = {
+		init : function() {
+
+			this.bindSnsLinkEvent();
+		}
+		,validate:function(){
+
+			var bResult = true;
+
+				/*
+				사용자 입력정보 VALIDATION 체크
+				해당 열  input, select 박스가 하나라도 미기재 된 경우 validation false
+				최초 미입력 된 element로 focus 이동됨
+				*/
+				var frstIdx = "";
+				$(".membersLogin p").each(function(){
+					var $this = $(this);
+					$this.find("input[type='text'],input[type='password']").each(function(idx){
+						var validYn = true;
+						var value = jQuery(this).val();
+						var id = jQuery(this).attr("id");
+						if(value == "" && id != "emailType"){
+							validYn = false;
+							if(frstIdx == ""){
+								frstIdx = jQuery(this);
+							}
+						}
+						if(!validYn){
+							$this.addClass("error");
+							$this.find(".alertMessage").show();
+						}else{
+							$this.removeClass("error");
+							$this.find(".alertMessage").hide();
+						}
+					});
+
+				});
+				if(frstIdx != ""){
+	  				bResult = false;
+					frstIdx.focus();
+					return false;
+				}
+
+
+			return bResult;
+		}
+		,fncLogin : function(param_loginSeCode) {
+			var frm_userid = "";
+			var frm_userpw = "";
+
+			frm_userid = jQuery("#frm_userid").val(); // 입력된 아이디
+			frm_userpw = jQuery("#frm_userpw").val(); // 입력된 비밀번호
+
+			var param_nextUrl = "/intro.do";
+
+			// 아이디 로그인시
+			if (param_loginSeCode != "SNS") {
+
+				if(PageScript.validate()){
+
+					var param = {
+							loginSeCode : param_loginSeCode
+							,loginId : frm_userid
+							,loginPassword : frm_userpw
+							,fromPageType : 'LOGIN'
+							,nextURL : param_nextUrl
+						}
+
+					/****************************
+					 * post 날리기 전에 요청전과 후의 동작을 정의
+					 ****************************/
+					$.ajaxSetup({
+						beforeSend : function(xhr, settings) {
+						},
+						complete : function(xhr, textStatus) {
+						}
+					});
+
+					/**********************************
+					 * post 요청
+					 **********************************/
+					$.post("/login/api/login.json", param, function(data, status, xhr) {
+
+						//로그인 실패시
+						if (data.nextURL != null && data.loginYn == "N") {
+
+							switch (data.apiRtnCd) {
+
+							case 'FC1004':
+
+								$('#frm_userpw').val("");
+
+								if(data.nextURL != null && data.nextURL != '' && data.apiRtnCd == 'FC1004'){
+									if(confirm(data.msg)){
+
+											location.href = data.nextURL;
+
+									}
+
+								}else{
+									alert(data.msg);
+								}
+
+								break;
+							case 'FC1003':
+								//휴면회원일 경우
+								/// /m/identify/releaseIdentifyIntro.do
+								$("#releaseIdentifyForm").find("input[name='loginId']").val(frm_userid);
+                                //외국인의 경우 email이 id
+                                $("#releaseIdentifyForm").find("input[name='email']").val(frm_userid);
+								$("#releaseIdentifyForm").attr("action", data.nextURL);
+								$("#releaseIdentifyForm").submit();
+								break;
+							case 'FC1006':
+								alert(data.msg);
+								break;
+							case 'E00007':
+								alert(data.msg);
+								break;
+							default:
+								console.log(data.msg);
+								break;
+							}
+
+						}else{
+
+							if(data.nextURL != null && data.nextURL != ''){
+								location.href = data.nextURL;
+							}
+						}
+
+					}, "json")
+
+					// error handling
+					.fail(function(xhr, status, error) {
+						alert('로그인 수행중 서버 오류가 발생하였습니다.'); //로그인 수행중 서버 오류가 발생하였습니다.
+					});
+
+				}
+
+
+			}
+
+
+
+		},
+		bindSnsLinkEvent : function() {
+
+			$('.snsLogin > a').each(
+
+					function() {
+
+						$(this).bind('click', function() {
+
+											var lnkType = $(this).attr('class');
+											var winSize = '';
+											var lnkUrl = '';
+											switch (lnkType) {
+											case "google":
+												winSize = 'width=750,height=850';
+												lnkUrl = "/sns/googleLogin.do?fromPageType=LOGIN";
+												break;
+											case "facebook":
+												winSize = 'width=750,height=850';
+												lnkUrl = "/sns/facebookLogin.do?fromPageType=LOGIN";
+												//alert('준비중입니다.');
+												//return;
+												break;
+											case "naver":
+												winSize = 'width=750,height=850';
+												lnkUrl = "/sns/naverLogin.do?callbackType=login&fromPageType=LOGIN";
+												break;
+											case "kakao":
+												winSize = 'width=750,height=850';
+												lnkUrl = "/sns/kakaoLogin.do?callbackType=login&fromPageType=LOGIN";
+												break;
+											case "apple":
+												winSize = 'width=750,height=850';
+												lnkUrl = "/sns/appleLogin.do?fromPageType=LOGIN";
+												break;
+
+											default:
+												break;
+											}
+
+											if(lnkType != "kakaosync"){
+												window.open(lnkUrl,'popupSnsLoginWin',winSize+ ',scrollbars=no,toolbar=no,menubar=no');
+											}
+
+										});
+					});
+
+		}
+
+	}
+
+	$(document).ready(function() {
+
+		PageScript = new PageScript();
+		PageScript.init();
+
+	});
+
+
+	function redirectNextPage(nextURL) {
+		document.location.href = nextURL;
+	}
+
+	function redirectPage() {
+		var nextURL = "/intro.do";
+
+		if (nextURL != '') {
+			document.location.href = nextURL;
+		} else {
+			document.location.href = "/m/main.do";
+		}
+	}
+
+	function noMbrLoginPage() {
+		$('#form').attr('action', "/m/login/noMbrLoginForm.do");
+		$('#form').attr('target', "_self");
+		$('#form').attr('method', "post");
+		$('#form').submit();
+
+	}
+</script>
